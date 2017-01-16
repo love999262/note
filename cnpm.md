@@ -1,6 +1,6 @@
 cnpm安装命令
 ```
-sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
+npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 如果不幸安装失败：
 ```
