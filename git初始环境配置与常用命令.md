@@ -96,3 +96,7 @@ git 强制推送到远端分支
 ```
 git push -f origin branchname
 ```
+git 重命名本地分支
+```
+git branch -m oldbranchname newbranchname
+```
