@@ -69,7 +69,7 @@ git reset --hard commitNum
 ```
 git 更新分支信息
 ```
-git fetch origin --prune
+git fetch origin --prune / git fetch
 ```
 git 查看所有分支信息
 ```
