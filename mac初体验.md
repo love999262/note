@@ -107,3 +107,8 @@ live on; 开启实时
 record off; 不记录数据
 
 5. 保存文件后，重新加载nginx的配置文件:nginx -s reload
+
+brew安装ffmpeg（带X265）
+```
+brew reinstall ffmpeg --with-x265
+```
