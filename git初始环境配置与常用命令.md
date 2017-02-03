@@ -104,3 +104,7 @@ git push设置默认分支为当前分支（不用每次都输分支名）
 ```
 git config --global push.default "current"
 ```
+git 修改提交的注释
+```
+git commit --amend
+```
