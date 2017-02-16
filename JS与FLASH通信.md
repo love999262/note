@@ -26,9 +26,7 @@ success, Boolean to indicate whether the embedding of a SWF was success or not
 id, String indicating the ID used in swfobject.registerObject
 ref, HTML object element reference (returns undefined when success=false)
 
-><script type="text/javascript" language="javascript" src="Scripts/swfobject.js"></script>
-<script language="javascript">
- function load(){
+>function load(){
   var swfVersionStr = "10.0.0";
   var params = {};
   params.quality = "high";  
@@ -53,6 +51,5 @@ ref, HTML object element reference (returns undefined when success=false)
    return document[movieName];
   }
  }
-</script>
 
 以上为引用
