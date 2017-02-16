@@ -6,7 +6,7 @@ var objContent = function(obj) {
             count++;
         }
     } else {
-        return 'object parameter only!!!'
+        return 'object type parameter only!!!'
     }
     return count;
 };
