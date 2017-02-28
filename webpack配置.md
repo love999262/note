@@ -38,3 +38,37 @@ module.exports = {
     ]
 };
 ```
+```
+var webpack = require('webpack');
+var path = require('path');
+module.exports = {
+    entry: [
+        // 入口文件
+        './src/js/script.js'
+    ],
+    output: {
+        // 输出目录和输出最终的文件名,打包成一个模块的最终成品.
+        path: './publish',
+        filename: 'moe.min.js'
+    },
+    module: {
+        loaders: [{
+            test: /\.css$/,
+            loader: "style-loader!css-loader"
+        }, {
+            test: /\.(png|jpg|gif|ttf|eot|svg|woff)$/,
+            loader: 'url-loader?limit=819200'
+        }, {
+            test: /\.less$/,
+            loader: "style-loader!css-loader!less-loader"
+        },  {
+            test: /\.css$/, 
+            loader: "style-loader!css-loader"
+        }, {
+            test: /\.js$/,
+            loader: 'babel-loader'
+        }]
+    }
+};
+
+```
