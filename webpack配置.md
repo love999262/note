@@ -72,3 +72,9 @@ module.exports = {
 };
 
 ```
+注意,相应的loader都需要通过npm安装
+
+```
+npm install --save-dev style-loader
+```
+
