@@ -77,4 +77,39 @@ module.exports = {
 ```
 npm install --save-dev style-loader
 ```
+关于压缩,打包后生成的一个或者多个文件在未压缩的情况下体积很大,这时候可以用第三方工具或者webpack自带的压缩工具进行压缩:
+```
+var webpack = require('webpack');
+var path = require('path');
+module.exports = {
+    entry: [
+        './src/js/kaguya.js'
+    ],
+    output: {
+        // 输出目录和输出最终的文件名,打包成一个模块的最终成品.
+        path: './',
+        filename: 'kaguya.min.js'
+    },
+    module: {
+        loaders: [{
+            test: /\.less$/,
+            loader: "style-loader!css-loader!less-loader"
+        }, {
+            test: /\.js$/,
+            loader: 'babel-loader'
+        }, {
+            test: /\.(png|jpg)$/,
+            loader: 'url-loader?limit=40000'
+        }]
+    },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+    ]
+};
 
+```
+new webpack.optimize.UglifyJsPlugin就是压缩方法
