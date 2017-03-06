@@ -113,3 +113,25 @@ module.exports = {
 
 ```
 new webpack.optimize.UglifyJsPlugin就是压缩方法
+
+webpack模块之间互相导入的问题:
+比较典型的就是从哪个网站随便下载而不是npm下来的jQuery和其他依赖jquery的模块之间总是会有各种$ is not defined 的问题,即使在index.js 中最先导入jquery依然会报错,这是因为????(我他妈也不知道因为什么,可能跟commonJs规范有关)
+
+```
+npm install imports-loader --save-dev
+```
+
+```入口的JS
+{
+    entry:{
+    index:'./src/js/index.js'
+    }
+}
+
+require('./jqGreen');
+$('#box').css('color','green');
+// $ is not defined
+require('imports?$=jquery!./jqGreen');
+```
+上面代码，把变量$注入进模块jqGreen.js。同时，我们指定了变量$=jquery。等于是在jqGreen.js文件的最顶上，加上了var $=require('jquery')。这样，程序就不会报$ is not defined的错误了。
+[https://github.com/a932455223/webpackDemo/tree/master/importsDemo](https://github.com/a932455223/webpackDemo/tree/master/importsDemo)
