@@ -134,4 +134,4 @@ $('#box').css('color','green');
 require('imports?$=jquery!./jqGreen');
 ```
 上面代码，把变量$注入进模块jqGreen.js。同时，我们指定了变量$=jquery。等于是在jqGreen.js文件的最顶上，加上了var $=require('jquery')。这样，程序就不会报$ is not defined的错误了。
-[https://github.com/a932455223/webpackDemo/tree/master/importsDemo](https://github.com/a932455223/webpackDemo/tree/master/importsDemo)
+[segmentfault](https://segmentfault.com/a/1190000007515136)
