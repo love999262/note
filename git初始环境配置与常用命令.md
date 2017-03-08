@@ -108,3 +108,8 @@ git 修改提交的注释
 ```
 git commit --amend
 ```
+
+git 设置缓存大小
+```
+git config http.pushBuffer 5242880000
+```
