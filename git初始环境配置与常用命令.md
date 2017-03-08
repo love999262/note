@@ -111,5 +111,5 @@ git commit --amend
 
 git 设置缓存大小
 ```
-git config http.pushBuffer 5242880000
+git config --global http.postBuffer 524288000
 ```
