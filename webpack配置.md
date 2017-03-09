@@ -1,5 +1,5 @@
-# webpack的主要作用是模块的打包,压缩等功能算是辅助,如果过大的项目不建议用webpack本身的压缩功能,建议用谷歌closure,其提供的功能主要还是让你可以在浏览器中写JS像写NODE那样分类模块,最终将所有的模块打包成一个或者几个文件,便于代码的模块化,有点类似于Browserify,可以配合gulp使用实现一个基本的前端工程化流程.
-# 首先安装nodejs安装好之后创建一个测试用的目录Webpacktest进入:
+## webpack的主要作用是模块的打包,压缩等功能算是辅助,如果过大的项目不建议用webpack本身的压缩功能,建议用谷歌closure,其提供的功能主要还是让你可以在浏览器中写JS像写NODE那样分类模块,最终将所有的模块打包成一个或者几个文件,便于代码的模块化,有点类似于Browserify,可以配合gulp使用实现一个基本的前端工程化流程.
+## 首先安装nodejs安装好之后创建一个测试用的目录Webpacktest进入:
 
 安装webpack(如果没有全局安装需要全局安装):
 
@@ -41,11 +41,11 @@ require('imports?$=jquery!./jqGreen');
 上面代码，把变量$注入进模块jqGreen.js。同时，我们指定了变量$=jquery。等于是在jqGreen.js文件的最顶上，加上了var $=require('jquery')。这样，程序就不会报$ is not defined的错误了。
 [segmentfault](https://segmentfault.com/a/1190000007515136)
 
-# es2015的preset报错问题
+## es2015的preset报错问题
 ```
 npm install babel-preset-es2015
 ```
-# jQuery未找到问题
+## jQuery未找到问题
 
 ```
     plugins: [
@@ -57,7 +57,7 @@ npm install babel-preset-es2015
         })
     ]
 ```
-# 字体文件错误问题
+## 字体文件错误问题
 
 ```
 loaders: [{
@@ -66,7 +66,7 @@ loaders: [{
         }
 ```
 
-# WIN系统路径问题
+## WIN系统路径问题
 
 ```
 和path有关暂时不想研究
