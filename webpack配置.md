@@ -135,3 +135,80 @@ require('imports?$=jquery!./jqGreen');
 ```
 上面代码，把变量$注入进模块jqGreen.js。同时，我们指定了变量$=jquery。等于是在jqGreen.js文件的最顶上，加上了var $=require('jquery')。这样，程序就不会报$ is not defined的错误了。
 [segmentfault](https://segmentfault.com/a/1190000007515136)
+
+es2015的preset报错问题
+```
+npm install babel-preset-es2015
+```
+jQuery未找到问题
+
+```
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery2",
+            jquery: "jquery2",
+            "window.jQuery": "jquery2",
+            jQuery: "jquery2"
+        })
+    ]
+```
+字体文件错误问题
+
+```
+loaders: [{
+            test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
+            loader: 'url-loader?limit=50000&name=[path][name].[ext]'
+        }
+```
+
+WIN系统路径问题
+
+```
+和path有关暂时不想研究
+```
+比较完整的webpack应该是这样的:
+```
+var webpack = require('webpack');
+module.exports = {
+    entry: [
+        './src/js/script.js'
+    ],
+    output: {
+        path: './publish',
+        filename: 'moe.min.js'
+    },
+    module: {
+        loaders: [{
+            test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
+            loader: 'url-loader?limit=50000&name=[path][name].[ext]'
+        }, {
+            test: /\.less$/,
+            loader: "style-loader!css-loader!less-loader"
+        }, {
+            test: /\.css$/,
+            loader: "style-loader!css-loader"
+        }, {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+            query: {
+                presets: ['es2015']
+            }
+        }]
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery2",
+            jquery: "jquery2",
+            "window.jQuery": "jquery2",
+            jQuery: "jquery2"
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+    ]
+};
+
+```
