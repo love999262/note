@@ -136,11 +136,11 @@ require('imports?$=jquery!./jqGreen');
 上面代码，把变量$注入进模块jqGreen.js。同时，我们指定了变量$=jquery。等于是在jqGreen.js文件的最顶上，加上了var $=require('jquery')。这样，程序就不会报$ is not defined的错误了。
 [segmentfault](https://segmentfault.com/a/1190000007515136)
 
-es2015的preset报错问题
+# es2015的preset报错问题
 ```
 npm install babel-preset-es2015
 ```
-jQuery未找到问题
+# jQuery未找到问题
 
 ```
     plugins: [
@@ -152,7 +152,7 @@ jQuery未找到问题
         })
     ]
 ```
-字体文件错误问题
+# 字体文件错误问题
 
 ```
 loaders: [{
@@ -161,11 +161,13 @@ loaders: [{
         }
 ```
 
-WIN系统路径问题
+# WIN系统路径问题
 
 ```
 和path有关暂时不想研究
 ```
+
+
 比较完整的webpack应该是这样的:
 ```
 var webpack = require('webpack');
