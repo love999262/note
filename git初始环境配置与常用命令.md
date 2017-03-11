@@ -113,3 +113,10 @@ git 设置缓存大小
 ```
 git config --global http.postBuffer 524288000
 ```
+
+git 去除ADD提醒
+```
+
+git config core.autocrlf false
+
+```
