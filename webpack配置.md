@@ -43,7 +43,7 @@ require('imports?$=jquery!./jqGreen');
 
 ## es2015的preset报错问题
 ```
-npm install babel-preset-es2015
+npm install --save-dev babel-preset-es2015
 ```
 ## jQuery未找到问题
 
