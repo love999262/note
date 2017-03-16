@@ -1,5 +1,6 @@
 ## webpack的主要作用是模块的打包,压缩等功能算是辅助,如果过大的项目不建议用webpack本身的压缩功能,建议用谷歌closure,其提供的功能主要还是让你可以在浏览器中写JS像写NODE那样分类模块,最终将所有的模块打包成一个或者几个文件,便于代码的模块化,有点类似于Browserify,可以配合gulp使用实现一个基本的前端工程化流程.
-## 首先安装nodejs安装好之后创建一个测试用的目录Webpacktest进入:
+
+### 首先安装nodejs安装好之后创建一个测试用的目录Webpacktest进入:
 
 安装webpack(如果没有全局安装需要全局安装):
 
@@ -41,11 +42,11 @@ require('imports?$=jquery!./jqGreen');
 上面代码，把变量$注入进模块jqGreen.js。同时，我们指定了变量$=jquery。等于是在jqGreen.js文件的最顶上，加上了var $=require('jquery')。这样，程序就不会报$ is not defined的错误了。
 [segmentfault](https://segmentfault.com/a/1190000007515136)
 
-## es2015的preset报错问题
+### es2015的preset报错问题
 ```
 npm install --save-dev babel-preset-es2015
 ```
-## jQuery未找到问题
+### jQuery未找到问题
 
 ```
     plugins: [
@@ -57,7 +58,7 @@ npm install --save-dev babel-preset-es2015
         })
     ]
 ```
-## 字体文件错误问题
+### 字体文件错误问题
 
 ```
 loaders: [{
@@ -66,57 +67,70 @@ loaders: [{
         }
 ```
 
-## WIN系统路径问题
+### WIN系统路径问题
 
 ```
-和path有关暂时不想研究
+和path有关具体可以看[mokou](https://github.com/love999262/mokou)这个项目的配置
 ```
 
-#明明在全局环境中添加了jquery但是却任然报错问题:
+### 明明在全局环境中添加了jquery但是却任然报错问题:
 - 可能该模块是按照commonjs标准写了并且引入了jQuery而npm的jquery模块名字和该模块内部定义的不太一样导致在运行该模块时并未找到jquery,需要手动去改.
+
+### 调试问题
+- sourcemap,然后到浏览器里ctrl+p具体看下面的示例
 比较完整的webpack应该是这样的:
 ```
-var webpack = require('webpack');
+const webpack = require('webpack');
+const path = require('path');
+
 module.exports = {
     entry: [
-        './src/js/script.js'
+        path.resolve(__dirname, './src/js/mokou.js')
     ],
     output: {
-        path: './publish',
-        filename: 'moe.min.js'
+        path: path.resolve(__dirname, 'publish'),
+        filename: 'mokou.min.js'
+    },
+    devtool: 'source-map',
+    devServer: {
+        publicPath: "./dist/",
     },
     module: {
         loaders: [{
-            test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
-            loader: 'url-loader?limit=50000&name=[path][name].[ext]'
-        }, {
-            test: /\.less$/,
-            loader: "style-loader!css-loader!less-loader"
-        }, {
-            test: /\.css$/,
-            loader: "style-loader!css-loader"
+            test: /\.scss$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'postcss-loader',
+                'sass-loader'
+            ]
         }, {
             test: /\.js$/,
             loader: 'babel-loader',
             exclude: /node_modules/,
-            query: {
+            options: {
                 presets: ['es2015']
             }
+        }, {
+            test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+            loader: 'url-loader?limit=8192&name=[path][name].[ext]'
         }]
     },
     plugins: [
         new webpack.ProvidePlugin({
-            $: "jquery2",
-            jquery: "jquery2",
-            "window.jQuery": "jquery2",
-            jQuery: "jquery2"
+            $: "jquery",
+            jquery: "jquery",
+            "window.jQuery": "jquery",
+            jQuery: "jquery"
         }),
         new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true,
             compress: {
                 warnings: false
             }
         })
     ]
 };
+
 
 ```
