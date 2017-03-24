@@ -120,3 +120,7 @@ git 去除ADD提醒
 git config core.autocrlf false
 
 ```
+git 以提交新版本的方式回退到制定的版本
+```
+$ git revert HEAD/commit
+```
