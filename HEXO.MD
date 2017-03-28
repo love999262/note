@@ -63,4 +63,4 @@ $ npm install hexo-deployer-git --save
 可以输入上面的命令再键入一次
 个人小结:
 hexo对于有NODE和GIT基础的人来说部署起来其实是很容易的,对与对编程整个都很陌生的人来说就比较麻烦,主要是很多概念不懂,个人觉得其实这东西看起来好看,可能有的主题并不是那么的实用,因为并没有一个简约的目录,所以写技术博客还是要找个带目录的主题
-[blog](https://love999262.github.io/) 
+- [blog](https://love999262.github.io/) 
