@@ -119,3 +119,15 @@ kill -9 PID
 ps -ef
 ```
 一般这个命令通过|grep筛选出想找的进程或者服务
+
+- 根据文件名查找文件
+
+```
+$ find / -name fileName
+```
+
+- 给某个命令改名
+
+```
+$ alias 'la'='ls -al'
+```
