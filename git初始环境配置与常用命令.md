@@ -124,6 +124,12 @@ git 以提交新版本的方式回退到制定的版本
 ```
 $ git revert HEAD/commit
 ```
+
+git 查看每一行代码最后一次提交的信息
+
+```
+$ git blame filename
+```
 # 首先从远端仓库拉下git仓库：
 ```
 git clone url
