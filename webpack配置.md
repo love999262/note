@@ -77,6 +77,11 @@ loaders: [{
 - 可能该模块是按照commonjs标准写了并且引入了jQuery而npm的jquery模块名字和该模块内部定义的不太一样导致在运行该模块时并未找到jquery,需要手动去改.
 
 ### 调试问题
+- 在watch的过程中可能会出现一些中断之后无法立刻重启的问题:
+```
+npm install supervisor -g
+```
+
 - sourcemap,然后到浏览器里ctrl+p具体看下面的示例
 比较完整的webpack应该是这样的:
 ```
