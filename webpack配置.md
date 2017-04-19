@@ -106,39 +106,51 @@ module.exports = {
         publicPath: "./dist/",
     },
     module: {
-        loaders: [{
-            test: /\.scss$/,
+        rules: [{
+            test: /\.less$/,
             use: [
                 'style-loader',
                 'css-loader',
                 'postcss-loader',
-                'sass-loader'
+                'less-loader'
             ]
+        }, {
+            enforce: "pre",
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: "eslint-loader",
+            options: {
+                // quiet: true,
+                failOnError: true
+            }
         }, {
             test: /\.js$/,
             loader: 'babel-loader',
-            exclude: /node_modules/,
+            exclude: ['/node_modules/', '*.min.js'],
             options: {
                 presets: ['es2015']
             }
         }, {
             test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
-            loader: 'url-loader?limit=8192&name=[path][name].[ext]'
+            loader: 'url-loader?limit=307200&name=[path][name].[ext]'
         }]
     },
     plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true,
+            compress: {
+                warnings: false,
+                drop_debugger: true,
+                drop_console: true
+            }
+        }),
         new webpack.ProvidePlugin({
             $: "jquery",
             jquery: "jquery",
             "window.jQuery": "jquery",
             jQuery: "jquery"
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
         })
+
     ]
 };
 
