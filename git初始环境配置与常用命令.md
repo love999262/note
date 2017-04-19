@@ -59,6 +59,12 @@ git 丢弃所有未提交
 ```
 git stash
 ```
+git 恢复最近一次的stash
+
+```
+git stash pop
+```
+
 git 回退到上个版本
 ```
 git reset --hard HEAD^ 
