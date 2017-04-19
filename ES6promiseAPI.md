@@ -159,3 +159,24 @@ timeout(100).then((value) => {
 　　.done(function(){ alert("哈哈，成功了！"); })
 　　.fail(function(){ alert("出错啦！"); });
 ```
+
+可以直接用$.Deffered包裹`函数名`的方式防止状态被外部改变
+```
+　　$.Deferred(wait)
+　　.done(function(){ alert("哈哈，成功了！"); })
+　　.fail(function(){ alert("出错啦！"); });
+```
+
+deferred.then():
+和ES6promise类似的then,用一个then包裹两个作为参数的函数,第一个参数为.done的方法,第二个参数为.fail的方法
+
+```
+　$.when($.ajax( "/main.php" ))
+　　.then(successFunc, failureFunc );
+```
+
+最后还可以加一个.always方法,用法和名字一样
+```
+　　$.ajax( "test.html" )
+　　.always( function() { console.log('always') );
+```
