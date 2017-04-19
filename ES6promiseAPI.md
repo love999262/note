@@ -180,3 +180,8 @@ deferred.then():
 　　$.ajax( "test.html" )
 　　.always( function() { console.log('always') );
 ```
+
+------
+
+`ES6 promise`
+
