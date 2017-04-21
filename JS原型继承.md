@@ -66,3 +66,29 @@ console.log(a.name);//sun
 和把B.prototype直接指向一个对象字面量相比,通过B.prototype = new A()形成的原型链比之前多了一层,但是其实并没有本质区别,都是将对象构造器的原型指向另一个对象,`继承总是发生在对象和对象之间`
 
 原型链会一直向上追溯到Object.prototype如果Object.prototype中也没有要找的属性就会返回undefined
+
+------
+ES6 class
+通过关键字就可以看到ES6正在像基于类的继承靠拢,至少表面上是这样,虽然背后依然是基于原型的继承.
+```
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    getName() {
+        return this.name
+    }
+}
+
+class Dog extends Animal {
+    constructor(name) {
+        super(name)
+    }
+    speak() {
+        return 'woof';
+    }
+}
+var dog = new Dog('Scamp');
+console.log(dog.getName() + 'says' + dog.speak());//Scampsayswoof
+```
+
