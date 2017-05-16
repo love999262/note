@@ -162,3 +162,7 @@ git push
 ```
 git branch -d
 ```
+# git submodule拉取远端分支:进入对应的目录下
+```
+$ git submodule update --init
+```
