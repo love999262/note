@@ -103,3 +103,17 @@ VSCode Great Icons 文件图标拓展
 
 VueHelper Vue2代码段（包括Vue2 api、vue-router2、vuex2）
 ```
+
+
+快捷键:↑↓←→
+
+进入对应函数:
+
+```
+Ctrl + 鼠标左键
+```
+进入后回到上次的地方:
+```
+Ctrl + Alt + ←/→
+```
+
