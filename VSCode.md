@@ -102,6 +102,8 @@ vscode-icons 文件图标，方便定位文件
 VSCode Great Icons 文件图标拓展
 
 VueHelper Vue2代码段（包括Vue2 api、vue-router2、vuex2）
+
+View InBrowser 在浏览器中打开
 ```
 
 
