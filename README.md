@@ -26,7 +26,7 @@
     - [JS与FLASH通信](JS与FLASH通信.md)
     - [值传递与引用传递](JS中的值传递和引用传递.md)
     - [this](JS中的值传递和引用传递.md)
-    - [自定义事件](JS自定义事件(以jquery为例).md)
+    - [自定义事件](JS自定义事件.md)
     - [jsx](jsx学习笔记.md)
     - [XHRprogress进度事件](progress进度事件.md)
     - [typescript](typescript学习笔记.md)
@@ -37,7 +37,7 @@
   - CSS
     - [纯CSS实现垂直居中](垂直居中.md)
     - [CSS3动态调整VIDEO标签内视频大小](CSS3调整video大小.md)
-    - [预处理器对calc()的处理兼容方式](预处理器对calc()智障解析的解决方案.md)
+    - [预处理器对calc()的处理兼容方式](预处理器对calc智障解析的解决方案.md)
   - DesignPattern
     - [发布订阅模式](设计模式-发布订阅模式.md)
     - [单例模式](JS单例模式.md)
