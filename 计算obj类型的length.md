@@ -1,4 +1,6 @@
-```
+
+```js
+
 var objContent = function(obj) {
     var count = 0;
     if(typeof obj === 'object') {
@@ -22,4 +24,5 @@ var testObj = {
     nine: NaN
 };
 console.log(objContent(testObj));
+
 ```
