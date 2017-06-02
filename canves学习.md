@@ -1,5 +1,6 @@
-首先得设置canvas标签，然后获取到该画布的DOM节点之后调用getContext("2d")方法传入2d上下文，将获取到的2D上下文对象赋值给一个变量存档以便后面调用。
-```
+# 首先得设置canvas标签，然后获取到该画布的DOM节点之后调用getContext("2d")方法传入2d上下文，将获取到的2D上下文对象赋值给一个变量存档以便后面调用。
+
+```js
     <canvas id="canvas"></canvas>
     <script>
     var $ = function(name) {
@@ -8,16 +9,20 @@
     var canvas = $("#canvas")
     var context = canvas.getContext("2d");
 ```
-第一部，先设置该画布的宽高属性。
-```
+
+- 第一步，先设置该画布的宽高属性。
+
+```js
     var width = 1000;
     var height = 800;
     canvas.width = width;
     canvas.height = height;
 
 ```
-设置完成火就可以通过操作context来进行canvas绘画了
-```
+
+- 设置完成火就可以通过操作context来进行canvas绘画了
+
+```js
     var arr = [
         "爱萝莉真是太好了",
         "Miku赛高！！！",
@@ -34,11 +39,10 @@
     for(var i = 0 ; i < arr.length ; i++){
     context.font = "24px";
         context.fillText(arr[i],100*i,100*i);
-        
     }
 ```
-详细的API日后再说吧。
-```
+
+```js
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,6 +77,4 @@ document.addEventListener("click", function(e) {
 </script>
 
 </html>
-
-
 ```

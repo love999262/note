@@ -1,3 +1,5 @@
+# 如何配置nginx location?
+
 默认的根目录为：
 ```
 /usr/local/nginx/html

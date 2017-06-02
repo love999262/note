@@ -1,15 +1,15 @@
-+ 确保安装了nodeJs，编辑器最好用webstorm，如果没有就用submileText
+# 确保安装了nodeJs，编辑器最好用VScode
 
-+  
+- 首先,在全局cli与项目根目录下安装gulp
+  
 ```
-npm install gulp -g   (global环境)
-npm install gulp --save-dev (项目环境)
+$ npm install gulp -g   (global环境)
+$ npm install gulp --save-dev (项目环境)
 ```
-在全局环境以及项目环境下确保安装了gulp
 
-+ 
-在项目的根目录下建立gulpfile.js文件，里面的测试代码如下：
-```
+- 在项目的根目录下建立`gulpfile.js`文件，里面的测试代码如下：
+
+```js
 var gulp = require('gulp');
 
 gulp.task('default', function() {
@@ -17,15 +17,14 @@ gulp.task('default', function() {
     console.log("step1 finished");
 });
 ```
-CD到项目根目录下运行gulp命令测试，如果输出console.log里面的内容就表示第一步成功了。
-+ 
-在项目根目录下npm install 需要用到的模块，比如：
+
+- CD到项目根目录下运行gulp命令测试，如果输出console.log里面的内容就表示第一步成功了。在项目根目录下npm install 需要用到的模块，比如：
+
 ```
-npm install gulp --save-dev gulp-imagemin
-```
-+ 
+$ npm install gulp --save-dev gulp-imagemin
 ```
 
+```js
 var gulp = require('gulp');
 var less = require('gulp-less');
 var rename = require('gulp-rename');
@@ -64,12 +63,14 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['less', 'rename', 'imageMin', 'html', 'watch']);
 
-
 ```
-上面这段代码是最基本的gulp任务和watch应用，不做详细讲解，自己看。
+
+- 上面这段代码是最基本的gulp任务和watch应用，不做详细讲解，自己看。
 
 
- 附录
+- 附录
+
+```js
 var gulp = require('gulp'),
 　　//代替 minifycss
 　　cleanCSS = require('gulp-clean-css'),
@@ -108,3 +109,4 @@ var gulp = require('gulp'),
     gulp.task('default',['jshint'],function() {
         gulp.start('minifycss','minifyjs'); 
 　　});
+```

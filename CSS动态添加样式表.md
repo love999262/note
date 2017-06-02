@@ -1,4 +1,6 @@
-```
+# 如何用CSS动态的添加样式表呢?
+
+```js
 var styleSheet= {
     addStyleSheet: function(url) {
         var link = document.createElement("link");
@@ -19,5 +21,4 @@ var styleSheet= {
         }
     }
 }
-
 ```

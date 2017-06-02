@@ -1,10 +1,10 @@
-直接像图片一样引入就可以了
+# 直接像图片一样引入就可以了
 
 
-# 可能会遇到的问题:
-- 颜色问题:
+- 可能会遇到的问题:
+  - 颜色问题:
 
-```
+```html
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -20,6 +20,9 @@
 </svg>
 
 ```
-path最后的fill直接控制颜色
+
+- path最后的fill直接控制颜色
+
 - 大小问题:
+
 这个可以在引入的时候用操作图片大小的方式来操作

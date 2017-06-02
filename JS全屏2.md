@@ -1,3 +1,89 @@
+# js全屏
+
+```js
+window.onresize = function() {
+    if (window.outerHeigth == screen.heigth && window.outerWidth == screen.width) {
+        alert("不是全屏");
+    } else {
+        alert("是全屏");
+    }
+}
+
+function launchFullscreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+    }
+}
+
+function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    }
+}
+exitFullscreen();
+
+```
+
+```js
+全屏属性和事件
+不幸的是，全屏属性和事件的相关方法也需要添加浏览器前缀，但我相信很快就不需要这样做了。
+
+document.fullScreenElement: 全屏显示的网页元素。
+document.fullScreenEnabled: 判断当前是否处于全屏状态。
+fullscreenchange事件会在启动全屏或退出全屏时触发：
+
+var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
+var fullscreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
+你仍然可以使用上面判断浏览器种类的方法给这个事件加上前缀。
+
+全屏样式CSS
+各种浏览器都提供了一个非常有用的全屏模式时的css样式规则：
+
+:-webkit-full-screen {
+  /* properties */
+}
+
+:-moz-full-screen {
+  /* properties */
+}
+
+:-ms-fullscreen {
+  /* properties */
+}
+
+:full-screen { /*pre-spec */
+  /* properties */
+}
+
+:fullscreen { /* spec */
+  /* properties */
+}
+
+/* deeper elements */
+:-webkit-full-screen video {
+  width: 100%;
+  height: 100%;
+}
+
+/* styling the backdrop*/
+::backdrop {
+  /* properties */
+}
+::-ms-backdrop {
+  /* properties */
+}
+
+
 fullscreen API 接口
 属性1：fullscreenElement 该属性返回当前处于全屏模式的DOM元素。
 
@@ -171,3 +257,4 @@ if (document.fullScreen) {                     // document.webkitIsFullScreen
 }  
   
 }, true);  
+```

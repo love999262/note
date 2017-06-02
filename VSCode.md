@@ -1,3 +1,5 @@
+# VScode可以说是目前最强大的文本编译器,配合一些插件,完全可以与IDE媲美,并且非常的流畅,可以说是地球上第二强大的编辑器也不为过.
+
 - 首先进入官网[VSCode](https://code.visualstudio.com/),下载对应系统的VSCode.
 
 - 然后安装插件`Ctrl/Cmd+P`之后`ext install`

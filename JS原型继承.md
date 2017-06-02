@@ -1,4 +1,6 @@
-```
+# 从现在(2017/6/2)来看,原型继承基本上用不到了,所以下面的作为一个了解就可以了不用细看,写JS有更好的方式ES6甚至是完全面向对象的typescript.用ts来写更加能够使用基于OO的设计模式,代码也更加不容易出错.
+
+```js
 function Parent(name){
     this.name = name || "Adam"
 }
@@ -12,37 +14,43 @@ function Child(name){
 }
 inherit(Child,Parent);
 ```
-这段代码中的inherit功能是让子元素Child继承父元素Parent的方法，需要自己实现，下面讲讲几种inherit的实现方法
+
+- 这段代码中的inherit功能是让子元素Child继承父元素Parent的方法，需要自己实现，下面讲讲几种inherit的实现方法
 
 - 默认模式
-```
+```js
 function inherit(C,P){
     C.prototype = new p();
 }
 ```
-这是最常用的，用new p()构造一个对象并将该对象赋值给C的原型，这样C就从P的示例中获取了他的功能。
+
+- 这是最常用的，用new p()构造一个对象并将该对象赋值给C的原型，这样C就从P的示例中获取了他的功能。
 此时C.prototype拥有了和P实力完全一样的obj，这时候：
-```
+
+```js
 var kid = new Child();
 kid.say();//"Adam"
 ```
-缺点：可能会继承不必要的属性，并且不能通过传参来更改属性值，只能不断的更改父元素，非常麻烦。
+
+- 缺点：可能会继承不必要的属性，并且不能通过传参来更改属性值，只能不断的更改父元素，非常麻烦。
 
 ------
-```
+
+```js
 var A = {name:'sun'}
 var B = function(){}
 B.prototype = A;
 var a = new A();
 console.log(a.name);//sun
 ```
+
 - 首先,JS引擎尝试遍历对象a中所有的属性,尝试找到name但是失败了.
 
 - 第一次失败之后查找name属性的这个请求被委托给对象a的构造器的原型,它被a.__proto__记录并且指向B.prototype,而B.prototype指向A
 
 - 在A中找到了值并且成功返回.
 
-```
+```js
     var A = function() {}
     A.prototype = {
         name: 'father'
@@ -68,9 +76,12 @@ console.log(a.name);//sun
 原型链会一直向上追溯到Object.prototype如果Object.prototype中也没有要找的属性就会返回undefined
 
 ------
-ES6 class
+
+- ES6 class
+
 通过关键字就可以看到ES6正在像基于类的继承靠拢,至少表面上是这样,虽然背后依然是基于原型的继承.
-```
+
+```js
 class Animal {
     constructor(name) {
         this.name = name;

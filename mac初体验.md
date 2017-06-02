@@ -1,4 +1,6 @@
-首先是外接win键盘之后需要改键,点击系统偏好设置之后点击键盘修饰键command <=> win,Option <=> alt,control <=> ctrl.
+# 一台新的MAC拿到手应该做些什么呢?
+
+- 首先是外接win键盘之后需要改键,点击系统偏好设置之后点击键盘修饰键command <=> win,Option <=> alt,control <=> ctrl.
 下面记录几个开发中常用的快捷键:
 在谷歌浏览器中打开调试工具:command + alt + i;
 qq截图:ctrl + command + a;

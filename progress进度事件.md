@@ -1,6 +1,6 @@
-在原生xhr对象中有一个progress方法，一般用这种方法做取下载进度条：
+# 在原生xhr对象中有一个progress方法，一般用这种方法做取下载进度条：
 
-```
+```js
 var xhr = new XMLHttpRequest();
 xhr.addEventListener("progress",function(event){
   if(event.lengthComputable){
@@ -19,7 +19,7 @@ xhr.addEventListener("progress",function(event){
 
 -------
 在jquery中用$.ajax的方式获取的xhr对象并没有progress事件需要我们自己添加：
-```
+```js
 $.ajax({
     xhr: function() {
         var xhr = new window.XMLHttpRequest();
@@ -47,6 +47,5 @@ $.ajax({
     }
 });
 ```
-以上情况只适用于符合同源策略的地址，如果是跨域的话jquery能请求到但是不能识别xhr对象。
 
------
+- 以上情况只适用于符合同源策略的地址，如果是跨域的话jquery能请求到但是不能识别xhr对象。

@@ -1,4 +1,6 @@
-```
+# js与flash通信
+
+```js
 embedSWF: function(swfUrlStr, replaceElemIdStr, widthStr, heightStr, swfVersionStr, xiSwfUrlStr, flashvarsObj, parObj, attObj, callbackFn)
 
 swfUrlStr：（String，必须的）flash地址url,
@@ -26,9 +28,7 @@ callbackFn参数：{success:true/false,id:"object id",ref:DOM Element}
 success, Boolean to indicate whether the embedding of a SWF was success or not
 id, String indicating the ID used in swfobject.registerObject
 ref, HTML object element reference (returns undefined when success=false)
-```
 
-```
 function load(){
   var swfVersionStr = "10.0.0";
   var params = {};
@@ -54,4 +54,4 @@ function load(){
    return document[movieName];
   }
  }
- ```
+```
