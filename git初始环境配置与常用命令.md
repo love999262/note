@@ -48,100 +48,93 @@ $ git config --global credential.helper store
 
 - git 查看所有远端分支：
 ```
-- git branch -a
+$ git branch -a
 ```
 - git获取远端分支:
 
 ```
-- git fetch origin branchname / git checkout -b branchname origin/branchname
+$ git fetch origin branchname / git checkout -b branchname origin/branchname
 ```
 
 - git 删除本地分支:
 ```
-git branch -d/D(force)
+$ git branch -d/D(force)
 ```
 - git 查看版本信息
 ```
-git log
+$ git log
 ```
 - git 比较差异
 ```
-git diff masterA masterB
+$ git diff masterA masterB
 ```
 - git 丢弃所有未提交
 ```
-git stash
+$ git stash
 ```
 - git 恢复最近一次的stash
 
 ```
-git stash pop
+$ git stash pop
 ```
 
 - git 回退到上个版本
 ```
-git reset --hard HEAD^ 
+$ git reset --hard HEAD^ 
 ```
 - git 回退到某个特定版本
 ```
-git reset --hard commitNum
+$ git reset --hard commitNum
 ```
 - git 更新分支信息
 ```
-git fetch origin --prune / git fetch
+$ git fetch origin --prune / git fetch
 ```
 - git 查看所有分支信息
 ```
-git branch -a
+$ git branch -a
 ```
 - git 删除远程分支
 ```
-git branch -r -d origin/branch-name  /  git push origin :branch-name
+$ git branch -r -d origin/branch-name  /  git push origin :branch-name
 ```
 - git 回退到具体的版本
 ```
-git reset --hard 版本号
+$ git reset --hard 版本号
 ```
-- git查看某个文件的详细提交记录 
-```
-- git log -p filename
-```
-
 - 绿字变红字(撤销add)
 ```
-git reset HEAD fileName
+$ git reset HEAD fileName
 ```
 - 红字变无 (撤销没add修改)
 ```
-git checkout -- fileName / stash
+$ git checkout -- fileName / stash
 ```
 - git 强制推送到远端分支
 ```
-git push -f origin branchname
+$ git push -f origin branchname
 ```
 - git 重命名本地分支
 ```
-git branch -m oldbranchname newbranchname
+$ git branch -m oldbranchname newbranchname
 ```
 - git push设置默认分支为当前分支（不用每次都输分支名）
 ```
-git config --global push.default "current"
+$ git config --global push.default "current"
 ```
 - git 修改提交的注释
 ```
-git commit --amend
+$ git commit --amend
 ```
 
 - git 设置缓存大小
 ```
-git config --global http.postBuffer 524288000
+$ git config --global http.postBuffer 524288000
 ```
 
 -  git 去除ADD提醒
 ```
-
-git config core.autocrlf false
-
+$ git config core.autocrlf false
 ```
 - git 以提交新版本的方式回退到制定的版本
 ```
@@ -153,9 +146,11 @@ $ git revert HEAD/commit
 ```
 $ git blame filename
 ```
-
+- git查看某个文件的详细提交记录 
+```
+$ git log -p filename
+```
 - git撤销回滚
-
 - 方法有多种,这里提一种
 1. 查看log:
 
