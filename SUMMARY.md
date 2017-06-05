@@ -27,7 +27,7 @@
     - [XHRprogress进度事件](progress进度事件.md)
     - [typescript](typescript学习笔记.md)
     - [websocket](websocket.md)
-    - [UMD](UMD.md)
+    - [UMD](UMD.md)
   - HTML
     - [移动端字体大小](移动端字体以及页面大小比例问题.md)
     - [svg使用方法](svg使用方式.md)
