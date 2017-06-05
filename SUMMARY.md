@@ -10,7 +10,7 @@
     - [计算{}类型的长度](计算obj类型的length.md)
     - [兼容的请求关键帧](兼容的请求关键帧.md)
     - [gulp任务报错中断NODE进程的解决方法](解决gulp任务报错跳出的问题.md)
-    - [用JS更改CSSkeyframes(关键帧)](用JS更改CSSkeyframes(关键帧).md)
+    - [用JS更改CSSkeyframes(关键帧)](用JS更改CSSkeyframes.md)
     - [在console下输出不同的log](在控制台输出不一样的log.md)
     - [call&apply](call&apply.md)
     - [canvas](canvas学习.md)
@@ -27,6 +27,7 @@
     - [XHRprogress进度事件](progress进度事件.md)
     - [typescript](typescript学习笔记.md)
     - [websocket](websocket.md)
+    - [UMD](UMD.md)
   - HTML
     - [移动端字体大小](移动端字体以及页面大小比例问题.md)
     - [svg使用方法](svg使用方式.md)
