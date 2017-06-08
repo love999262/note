@@ -4,6 +4,7 @@
 
 - Technology
   - JavaScript
+    - [es6](es6.md)
     - [合并多个obj对象]($.extend.md)
     - [闭包](闭包.md)
     - [获取当前所在iframe的ID](获取当前的ID.md)
