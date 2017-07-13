@@ -125,6 +125,10 @@ ps -ef
 - 根据文件名查找文件
 
 ```
+whereis   // whereis nginx
+```
+
+```
 $ find / -name fileName
 ```
 
