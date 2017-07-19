@@ -219,3 +219,9 @@ $ git branch -d
 ```
 $ git submodule update --init
 ```
+
+- git移除已经存在的远端分支
+
+```
+$ git remote rm origin
+```
