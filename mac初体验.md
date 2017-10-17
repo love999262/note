@@ -119,3 +119,7 @@ brew安装ffmpeg（带X265）
 ```
 brew reinstall ffmpeg --with-x265
 ```
+
+
+工具:
+终端: iterm2
