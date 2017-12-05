@@ -34,3 +34,13 @@
 ```
 
 - 该DEMO指定了一个DOM元素,为该元素监听了一个native事件`click`,在触发click事件的同时会用trigger去调用该DOM元素上的一个叫做`_click`的事件,但是我们知道`_click`这个事件浏览器本身是没有的,我们可以用on来监听自定义事件,一旦trigger触发了自定义事件就会被on监听到从而去执行对应的function.
+
+- 最近再研究React,同时也在脱离jQuery,原生JS有什么比较好的方法触发用户自定义事件呢?
+仔细翻阅书籍我发现了这两个API: document.createEvent initCustomEvent,前者是事件创建器,后者则是事件触发器,可以支持到IE9+,下面看一个DEMO:
+
+```
+const customEvent = document.createEvent('CustomEvent');
+customEvent.initCustomEvent('selfEventName', true, false, 'Hello customeEvent!!!');
+document.dispatchEvent(customEvent);
+```
+其中customEvent.initCustomEvent中四个参数分别是 事件类型, 是否冒泡, 是否能取消, detail对象(保存在event.detail中的值)
