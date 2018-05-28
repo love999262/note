@@ -196,4 +196,61 @@ Ctrl+Shift+V
         "command": "-workbench.action.terminal.new"
     }
 ]
+
+// 将按键绑定配置放入此文件中即可覆盖默认值
++[
++    {
++        "key": "alt+d",
++        "command": "editor.action.addSelectionToNextFindMatch",
++        "when": "editorFocus"
++    },
++    {
++        "key": "cmd+d",
++        "command": "-editor.action.addSelectionToNextFindMatch",
++        "when": "editorFocus"
++    },
++    {
++        "key": "cmd+r",
++        "command": "editor.action.startFindReplaceAction"
++    },
++    {
++        "key": "alt+cmd+f",
++        "command": "-editor.action.startFindReplaceAction"
++    },
++    {
++        "key": "alt+left",
++        "command": "workbench.action.navigateBack"
++    },
++    {
++        "key": "ctrl+-",
++        "command": "-workbench.action.navigateBack"
++    },
++    {
++        "key": "alt+right",
++        "command": "workbench.action.navigateForward"
++    },
++    {
++        "key": "ctrl+shift+-",
++        "command": "-workbench.action.navigateForward"
++    },
++    {
++        "key": "cmd+d",
++        "command": "editor.action.deleteLines",
++        "when": "textInputFocus && !editorReadonly"
++    },
++    {
++        "key": "shift+cmd+k",
++        "command": "-editor.action.deleteLines",
++        "when": "textInputFocus && !editorReadonly"
++    },
++    {
++        "key": "shift+cmd+r",
++        "command": "workbench.action.replaceInFiles"
++    },
++    {
++        "key": "shift+cmd+h",
++        "command": "-workbench.action.replaceInFiles"
++    }
++]
+
 ```
