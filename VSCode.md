@@ -139,7 +139,7 @@ Ctrl+Shift+V
 
 复制/粘贴
 ```
-// 将按键绑定配置放入此文件中即可覆盖默认值
+// 将键绑定放入此文件中以覆盖默认值
 [
     {
         "key": "alt+d",
@@ -147,51 +147,53 @@ Ctrl+Shift+V
         "when": "editorFocus"
     },
     {
-        "key": "cmd+d",
+        "key": "ctrl+d",
         "command": "-editor.action.addSelectionToNextFindMatch",
         "when": "editorFocus"
     },
     {
-        "key": "cmd+r",
+        "key": "ctrl+r",
         "command": "editor.action.startFindReplaceAction"
     },
     {
-        "key": "alt+cmd+f",
+        "key": "ctrl+h",
         "command": "-editor.action.startFindReplaceAction"
     },
     {
-        "key": "alt+left",
-        "command": "workbench.action.navigateBack"
-    },
-    {
-        "key": "ctrl+-",
-        "command": "-workbench.action.navigateBack"
-    },
-    {
-        "key": "alt+right",
-        "command": "workbench.action.navigateForward"
-    },
-    {
-        "key": "ctrl+shift+-",
-        "command": "-workbench.action.navigateForward"
-    },
-    {
-        "key": "cmd+d",
+        "key": "ctrl+d",
         "command": "editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "shift+cmd+k",
+        "key": "ctrl+shift+k",
         "command": "-editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "shift+cmd+r",
+        "key": "ctrl+shift+r",
         "command": "workbench.action.replaceInFiles"
     },
     {
-        "key": "shift+cmd+h",
+        "key": "ctrl+shift+h",
         "command": "-workbench.action.replaceInFiles"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "editor.action.formatSelection",
+        "when": "editorHasSelection && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k ctrl+f",
+        "command": "-editor.action.formatSelection",
+        "when": "editorHasSelection && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+shift+oem_3",
+        "command": "-workbench.action.terminal.new"
     }
 ]
 ```
